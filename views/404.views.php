@@ -1,0 +1,1 @@
+<?php print'404_not_fount !!!'; ?>

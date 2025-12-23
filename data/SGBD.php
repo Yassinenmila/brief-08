@@ -20,7 +20,10 @@ class database {
         return $conn;
     }
 
+    public function insert_user(){
+        $conn->$this->connect();
+    }
+
 }
-$db= new database();
-$conn=$db->connect();
+
 ?>
