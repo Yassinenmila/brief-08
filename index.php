@@ -16,4 +16,5 @@ $page=$router->run();
 
 
 require_once __DIR__."/parts/layout.php";
+
 ?>
