@@ -7,23 +7,20 @@ class database {
     private $pass="Yassine34.";
     private $db_name="bibliotheque";
 
-    public function connect (){
-        $conn= mysqli_connect(
-            $this->host,
-            $this->root,
-            $this->pass,
-            $this->db_name
-        );
-        if(!$conn){
-            die("erreur de connection: ");
+    public function __construct(){
+        try{
+            $conn= new PDO (
+                "mysql:host=".$this->host.";dbname=".$this->db_name,
+                $this->root,
+                $this->pass
+            );
+            return $conn;
         }
-        return $conn;
+        catch (PDOExeption $e) {
+            echo "erreur de connection !!!";
+            return null;
+        } 
     }
-
-    public function insert_user(){
-        $conn->$this->connect();
-    }
-
 }
 
 

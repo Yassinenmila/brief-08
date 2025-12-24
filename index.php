@@ -7,8 +7,11 @@ require_once __DIR__."/./assets/library.php";
 
 require_once __DIR__."/router.php";
 
-$router= new router();
+$db= new database();
 
+
+
+$router= new router();
 $page=$router->run();
 
 
