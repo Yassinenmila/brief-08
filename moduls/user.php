@@ -2,7 +2,7 @@
 
 abstract class User {
 
-    private $conn;
+    protected $conn;
     protected $email;
     protected $password;
 
