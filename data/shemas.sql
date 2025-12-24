@@ -10,7 +10,7 @@ create table user (
     email varchar (150) unique not null,
     pwd varchar(100) not null,
     desc text,
-    roles varchar(100)
+    role varchar(100)
 );
 
 create table book (

@@ -23,6 +23,7 @@ class database {
     }
 }
 
+$db= new database();
 
 
 

@@ -33,5 +33,6 @@ class router {
     }
 
 }
-
+$router= new router();
+$page=$router->run();
 ?>
