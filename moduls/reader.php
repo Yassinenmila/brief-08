@@ -2,6 +2,11 @@
 
 class Reader extends User {
 
+
+    public function __construct($conn){
+        parent::__construct($conn);
+    }
+
     public function borrow($user_id,$book_id){
         
         $stmt=$this->conn->prepare("SELECT dispo FROM book WHERE id=?");
