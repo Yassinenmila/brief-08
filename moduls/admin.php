@@ -22,8 +22,6 @@ class Admin extends User {
 
     public function delete($book_id,$dispo=1){
         
-        
-
         $stmt=$this->conn->prepare("DELETE FROM book WHERE id = ? AND dispo=?");
         return $stmt->execute([$book_id,$dispo]);
     }

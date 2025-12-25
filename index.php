@@ -1,11 +1,12 @@
 <?php 
 session_start();
 
-// declaration de la base de donner 
-require_once __DIR__."/data/SGBD.php";
 
 // modules configuration 
 require_once __DIR__."/moduls/conf.php";
+
+// declaration de la base de donner 
+require_once __DIR__."/data/SGBD.php";
 
 // library php
 require_once __DIR__."/./assets/library.php";
