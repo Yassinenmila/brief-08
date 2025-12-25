@@ -28,8 +28,13 @@ abstract class User {
         $pdo="INSERT INTO users (nom,prenom,nationalite,email,pwd,descr,role) VALUES (?,?,?,?,?,?,?)";
         $stmt=$this->conn->prepare($pdo);
         $stmt->execute([$nom,$prenom,$nationalite,$email,password_hash($pwd,PASSWORD_DEFAULT),$desc,'user']);
-        
-        return $this->conn->lastInsertId();
+
+        $stmt=$this->conn->prepare("SELECT * FROM users WHERE email=?");
+        $stmt->execute([$email]);
+
+        $user=$stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $user;
 
     }
 }
