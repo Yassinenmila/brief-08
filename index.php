@@ -1,12 +1,11 @@
 <?php 
 session_start();
 
-
-// modules configuration 
-require_once __DIR__."/moduls/conf.php";
-
 // declaration de la base de donner 
 require_once __DIR__."/data/SGBD.php";
+$db= new database();
+// modules configuration 
+require_once __DIR__."/moduls/conf.php";
 
 // library php
 require_once __DIR__."/./assets/library.php";

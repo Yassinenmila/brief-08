@@ -31,5 +31,5 @@
 
             <button type="submit" name="sub_sign" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">S’inscrire</button>
         </form>
-        <p class="text-sm text-center mt-4"> Déjà un compte ?<a href="login.html" class="text-blue-600 hover:underline">Se connecter</a></p>
+        <p class="text-sm text-center mt-4"> Déjà un compte ?<a href="/login" class="text-blue-600 hover:underline">Se connecter</a></p>
 </div>
