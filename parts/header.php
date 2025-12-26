@@ -34,7 +34,7 @@
                 </div>
             </nav>
         </header>
-        <main class="h-[85vh] flex flex-col justify-center items-center">
+        <main class=" flex flex-col justify-center items-center">
     
    
 
