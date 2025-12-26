@@ -19,11 +19,10 @@ if(isset($_POST['sub_sign']) && $_SERVER['REQUEST_METHOD'] === 'POST'){
         $sign= new reader ($db->conn);
         $user=$sign->signup($l_name,$f_name,$nation,$email,$pass,$desc);
         if ($user) {
-            header("Location: login");
-            
+            header("Location:/login");
             exit;
         } else {
-            $error = "Email déjà utilisé";
+            echo "Email déjà utilisé";
         }
 
     }

@@ -3,7 +3,7 @@ session_start();
 
 // declaration de la base de donner 
 require_once __DIR__."/data/SGBD.php";
-$db= new database();
+
 // modules configuration 
 require_once __DIR__."/moduls/conf.php";
 
