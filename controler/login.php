@@ -7,7 +7,7 @@ if(isset($_POST['sub_log']) && $_SERVER['REQUEST_METHOD']==='POST'){
     $pwd=$_POST['pass'] ?? '';
 
     if(empty($email) || empty($pwd)){
-        $message = "veuiller remplir les champs !!";
+        echo "veuiller remplir les champs !!";
     } else {
         $log=new reader($db->conn);
         $user=$log->login($email,$pwd);
@@ -31,5 +31,6 @@ if(isset($_POST['sub_log']) && $_SERVER['REQUEST_METHOD']==='POST'){
         }
     }
 }
+
 ?>
 <?php require_once __DIR__."/../views/login.views.php"; ?>

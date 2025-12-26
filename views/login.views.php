@@ -10,7 +10,7 @@
                 <label class="block text-sm font-medium">Mot de passe :</label>
                 <input type="password" name="pass" required class="w-full mt-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Mots de pass">
             </div>
-            <button type="sub_log" name="sub_log" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">Se connecter</button>
+            <button type="submit" name="sub_log" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">Se connecter</button>
         </form>
         <p class="text-sm text-center mt-4"> tu n'a pas un compte ? <a href="/signup" class="text-blue-600 hover:underline">S'inscrire</a></p>
 </div>

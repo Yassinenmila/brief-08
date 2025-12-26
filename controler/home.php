@@ -27,6 +27,5 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['borrow'])){
     }
    
 }
-
 ?>
 <?php require_once __DIR__."/../views/home.views.php"; ?>
