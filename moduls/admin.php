@@ -17,13 +17,13 @@ class Admin extends User {
 
     public function update($id,$titre,$dispo){
         $stmt= $this->conn->prepare("UPDATE book SET titre=?,dispo=? WHERE id=?");
-        return $stmt->execute([$titre,$dispo,$id]);
+        $stmt->execute([$titre,$dispo,$id]);
     }
 
     public function delete($book_id,$dispo=1){
         
         $stmt=$this->conn->prepare("DELETE FROM book WHERE id = ? AND dispo=?");
-        return $stmt->execute([$book_id,$dispo]);
+        $stmt->execute([$book_id,$dispo]);
     }
 }
 ?>

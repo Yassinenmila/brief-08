@@ -7,7 +7,7 @@ if(isset($_POST['sub_log']) && $_SERVER['REQUEST_METHOD']==='POST'){
     $pwd=$_POST['pass'] ?? '';
 
     if(empty($email) || empty($pwd)){
-        echo "veuiller remplir les champs !!";
+        $message = "veuiller remplir les champs !!";
     } else {
         $log=new reader($db->conn);
         $user=$log->login($email,$pwd);
@@ -17,6 +17,8 @@ if(isset($_POST['sub_log']) && $_SERVER['REQUEST_METHOD']==='POST'){
             $_SESSION['user'] = [
                 'id'    => $user['id'],
                 'nom'   => $user['nom'],
+                'prenom'=> $user['prenom'],
+                'nationalite'=> $user['nationalite'],
                 'email' => $user['email'],
                 'role'  => $user['role']
             ];

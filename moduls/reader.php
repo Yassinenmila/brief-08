@@ -29,15 +29,23 @@ class Reader extends User {
 
     public function unborrow($user_id,$book_id){
 
-        // $stmt=$this->conn->prepare("SELECT * FROM borrow WHERE user_id=? AND book_id=?");
-        // $stmt->execute([$user_id,$book_id]);
-
-
-        $stmt=$this->conn->prepare("DELETE FROM borrow WHERE user_id=? AND book_id=?");
+        $stmt=$this->conn->prepare("SELECT * FROM borrow WHERE user_id=? AND book_id=?");
         $stmt->execute([$user_id,$book_id]);
+        $book=$stmt->fetch(PDO::FETCH_ASSOC);
 
-        $stmt=$this->conn->prepare("UPDATE book SET dispo=1 WHERE id=?");
-        $stmt->execute([$book_id]);
+        if(!empty($book)){
+            
+            return false;
+
+        } else {
+
+            $stmt=$this->conn->prepare("DELETE FROM borrow WHERE user_id=? AND book_id=?");
+            $stmt->execute([$user_id,$book_id]);
+
+            $stmt=$this->conn->prepare("UPDATE book SET dispo=1 WHERE id=?");
+            $stmt->execute([$book_id]);
+            return true ;
+        }
     }
 }
 ?>
