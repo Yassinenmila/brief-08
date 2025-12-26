@@ -6,9 +6,6 @@ if(isset($_POST['sub_log']) && $_SERVER['REQUEST_METHOD']==='POST'){
     $email=$_POST['email'] ?? '';
     $pwd=$_POST['pass'] ?? '';
 
-    // echo $email;
-    // echo $pwd;
-
     if(empty($email) || empty($pwd)){
         echo "veuiller remplir les champs !!";
     } else {
@@ -26,7 +23,7 @@ if(isset($_POST['sub_log']) && $_SERVER['REQUEST_METHOD']==='POST'){
 
             header("Location:/home");
             exit;
-            
+
         }else{
             echo "there is a problem here !!!";
         }

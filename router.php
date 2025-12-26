@@ -22,10 +22,18 @@ class router {
             case '/login':
                 $page="login";
                 break;
-             case '/signup':
+            case '/signup':
                 $page="signup";
                 break;
-
+            case '/logout':
+                $page="logout";
+                break;
+            case '/profil':
+                $page="profil";
+                break;
+            case '/admin':
+                $page="admin";
+                break;
             default:
             $page="404";
         }
