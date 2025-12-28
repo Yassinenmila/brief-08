@@ -33,11 +33,9 @@ class Reader extends User {
         $stmt->execute([$user_id,$book_id]);
         $book=$stmt->fetch(PDO::FETCH_ASSOC);
 
-        if(!empty($book)){
-            
+        if(empty($book)){   
             return false;
-
-        } else {
+        } 
 
             $stmt=$this->conn->prepare("DELETE FROM borrow WHERE user_id=? AND book_id=?");
             $stmt->execute([$user_id,$book_id]);
@@ -45,7 +43,7 @@ class Reader extends User {
             $stmt=$this->conn->prepare("UPDATE book SET dispo=1 WHERE id=?");
             $stmt->execute([$book_id]);
             return true ;
-        }
+        
     }
 }
 ?>

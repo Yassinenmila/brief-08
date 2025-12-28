@@ -47,5 +47,12 @@ class Book extends User{
             return [] ;
         }
     }
+    public function admin(){
+
+        $stmt=$this->conn->prepare("SELECT * FROM book ");
+        $stmt->execute();
+        $books=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $books;
+    }
 }
 ?>
