@@ -10,11 +10,7 @@ class database {
     public $conn;
     public function __construct(){
         try{
-            $this->conn= new PDO (
-                "mysql:host=".$this->host.";dbname=".$this->db_name,
-                $this->root,
-                $this->pass
-            );
+            $this->conn= new PDO ("mysql:host=".$this->host.";dbname=".$this->db_name,$this->root,$this->pass);
         }
         catch (PDOExeption $e) {
             echo "erreur de connection !!!";

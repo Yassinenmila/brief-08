@@ -49,7 +49,7 @@ class Book extends User{
     }
     public function admin(){
 
-        $stmt=$this->conn->prepare("SELECT * FROM book ");
+        $stmt=$this->conn->prepare("SELECT * FROM book ORDER BY id DESC");
         $stmt->execute();
         $books=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $books;

@@ -21,6 +21,7 @@ create table book (
     descr text not null,
     dispo boolean DEFAULT TRUE 
 );
+
 create table borrow (
     user_id int, 
     book_id int,
