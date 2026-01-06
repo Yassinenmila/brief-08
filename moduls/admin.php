@@ -6,17 +6,24 @@ class Admin extends User {
         parent::__construct($conn);
     }
 
-    public function ajouter($titre,$author,$date_pub,$desc,$dispo){
+    public function ajouter($titre,$author,$date_pub,$desc){
 
         $stmt=$this->conn->prepare("INSERT INTO book (titre,author_name,date_pub,descr,dispo) VALUES (?,?,?,?,?)");
-        $stmt->execute([$titre,$author,$date_pub,$desc,$dispo]);
+        $stmt->execute([$titre,$author,$date_pub,$desc,1]);
         return true;
     }
 
-    public function update($id,$titre,$dispo){
-        $stmt= $this->conn->prepare("UPDATE book SET titre=?,dispo=? WHERE id=?");
-        $stmt->execute([$titre,$dispo,$id]);
+    public function update($id,$titre,$author,$date_pub,$desc){
+        
+        $stmt= $this->conn->prepare("UPDATE book SET titre=?,author_name=?,date_pub=?,descr=? WHERE id=?");
+        $stmt->execute([$titre,$author,$date_pub,$desc,$id]);
         return true;
+    }
+    public function find($id){
+        $stmt=$this->conn->prepare("SELECT * FROM book WHERE id=?");
+        $stmt->execute([$id]);
+        $book=$stmt->fetch(PDO::FETCH_ASSOC);
+        return $book;
     }
 
     public function delete($book_id){
@@ -29,7 +36,7 @@ class Admin extends User {
             return false ;
         }
         $stmt=$this->conn->prepare("DELETE FROM book WHERE id = ? AND dispo=?");
-        $stmt->execute([$book_id,$dispo]);
+        $stmt->execute([$book_id,1]);
         return true;
     }
 }

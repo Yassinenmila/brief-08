@@ -34,6 +34,12 @@ class router {
             case '/admin':
                 $page="admin";
                 break;
+            case '/add':
+                $page="add";
+                break;
+            case '/update':
+                $page="update";
+                break;
             default:
             $page="404";
         }

@@ -4,11 +4,11 @@
         <form method="POST" class="space-y-4">
             <div>
                 <label class="block text-sm font-medium">Email :</label>
-                <input  type="email" name="email" required class="w-full mt-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="email@example.com">
+                <input  type="email" name="email"  class="w-full mt-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="email@example.com">
             </div>
             <div>
                 <label class="block text-sm font-medium">Mot de passe :</label>
-                <input type="password" name="pass" required class="w-full mt-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Mots de pass">
+                <input type="password" name="pass" class="w-full mt-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Mots de pass">
             </div>
             <button type="submit" name="sub_log" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">Se connecter</button>
         </form>
