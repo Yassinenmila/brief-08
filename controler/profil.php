@@ -16,7 +16,6 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['return'])){
     $unbo= $tab->unborrow($user_id,$book_id);
     
     if($unbo){
-         echo "book unborrowed !!";
          header("Location: /profil");
          exit;
     }else {

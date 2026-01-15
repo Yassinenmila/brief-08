@@ -8,14 +8,14 @@ class Admin extends User {
 
     public function ajouter($titre,$author,$date_pub,$desc){
 
-        $stmt=$this->conn->prepare("INSERT INTO book (titre,author_name,date_pub,descr,dispo) VALUES (?,?,?,?,?)");
+        $stmt=$this->conn->prepare("INSERT INTO book (titre,autor_name,date_publication,descr,dispo) VALUES (?,?,?,?,?)");
         $stmt->execute([$titre,$author,$date_pub,$desc,1]);
         return true;
     }
 
     public function update($id,$titre,$author,$date_pub,$desc){
         
-        $stmt= $this->conn->prepare("UPDATE book SET titre=?,author_name=?,date_pub=?,descr=? WHERE id=?");
+        $stmt= $this->conn->prepare("UPDATE book SET titre=?,autor_name=?,date_publication=?,descr=? WHERE id=?");
         $stmt->execute([$titre,$author,$date_pub,$desc,$id]);
         return true;
     }

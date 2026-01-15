@@ -15,17 +15,17 @@
         <tbody>
         <?php foreach ($books as $b): ?>
             <tr class="hover:bg-gray-50 text-center">
-                <td class="p-3 border"><?= $b['id'] ?></td>
+                <td class="p-3 border"><?= $b['ID'] ?></td>
                 <td class="p-3 border text-left"><?= htmlspecialchars($b['titre']) ?></td>
-                <td class="p-3 border text-left"><?= htmlspecialchars($b['author_name']) ?></td>
+                <td class="p-3 border text-left"><?= htmlspecialchars($b['autor_name']) ?></td>
                 <td class="p-3 border">
                     <div class="flex justify-center gap-2">
                         <form method="POST" action="/update">
-                            <input type="hidden" name="id" value="<?= $b['id'] ?>">
+                            <input type="hidden" name="id" value="<?= $b['ID'] ?>">
                             <button type="submit" name="update" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Modifier</button>
                         </form>
                         <form method="POST" onsubmit="return confirm('Confirmer la suppression ?')">
-                            <input type="hidden" name="id" value="<?= $b['id'] ?>">
+                            <input type="hidden" name="id" value="<?= $b['ID'] ?>">
                             <button type="submit" name="delete" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Supprimer</button>
                         </form>
 
