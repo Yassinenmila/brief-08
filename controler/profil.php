@@ -1,4 +1,3 @@
-
 <?php 
 
 $arr= new Book ($db->conn);
@@ -18,7 +17,7 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['return'])){
     
     if($unbo){
          echo "book unborrowed !!";
-         header("Location:/profil");
+         header("Location: /profil");
          exit;
     }else {
         echo "there is a problem !!!";
@@ -27,4 +26,3 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['return'])){
 }
 
 ?>
-<?php require_once __DIR__."/../views/profil.views.php"; ?>

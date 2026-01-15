@@ -8,9 +8,8 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['sub_add'])){
 
     $add=new Admin($db->conn);
     $add->ajouter($titre,$author_name,$date_pub,$text);
-    header("Location:/admin");
+    header("Location: /admin");
     exit;
 }
 
 ?>
-<?php require_once __DIR__."/../views/add.views.php"?>

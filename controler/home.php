@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $book= new Book($db->conn);
 
@@ -19,8 +19,7 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['borrow'])){
     $bor=$r->borrow($user_id,$book_id);
 
     if($bor){
-        echo "you have borrowed a book !!!";
-        header("Location:/home");
+        header("Location: /home");
         exit;
     }else {
         echo "error";
@@ -28,4 +27,3 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['borrow'])){
    
 }
 ?>
-<?php require_once __DIR__."/../views/home.views.php"; ?>

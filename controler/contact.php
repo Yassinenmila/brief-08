@@ -1,3 +1,3 @@
-
-
-<?php require_once __DIR__."/../views/contact.views.php"; ?>
+<?php 
+// La vue sera incluse par layout.php
+?>

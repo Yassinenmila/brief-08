@@ -1,24 +1,27 @@
 <?php 
 
-class database {
-
-    private $host= "localhost";
-    private $root="yassine";
-    private $pass="Yassine34.";
-    private $db_name="bibliotheque";
+class Database {
+    
+    private $host = "db";               
+    private $user = "user";             
+    private $pass = "userpassword";     
+    private $db   = "mon_projet_db";    
 
     public $conn;
-    public function __construct(){
-        try{
-            $this->conn= new PDO ("mysql:host=".$this->host.";dbname=".$this->db_name,$this->root,$this->pass);
-        }
-        catch (PDOExeption $e) {
-            echo "erreur de connection !!!";
+
+    public function __construct() {
+        try {
+            $this->conn = new PDO(
+                "mysql:host=".$this->host.";dbname=".$this->db,
+                $this->user,
+                $this->pass
+            );
+        } catch (PDOException $e) {
+            echo "Erreur de connexion : " . $e->getMessage();
         } 
     }
 }
 
-$db= new database();
+ $db= new Database();
 
 
-?>

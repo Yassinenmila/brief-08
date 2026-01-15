@@ -35,7 +35,3 @@
             </nav>
         </header>
         <main class=" flex flex-col justify-center items-center">
-    
-   
-
-  

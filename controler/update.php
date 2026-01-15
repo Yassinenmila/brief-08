@@ -17,4 +17,3 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['sub_mod'])){
     exit;
 }
 ?>
-<?php require_once __DIR__."/../views/update.views.php" ?>

@@ -23,11 +23,11 @@
                <?php foreach($books as $b): ?>
                 <tr>
                     <td class="p-4"><?= $b['titre'] ?></td>
-                    <td class="p-4"><?= $b['author_name'] ?></td>
-                    <td class="p-4"><?= $b['date_pub'] ?></td>
+                    <td class="p-4"><?= $b['autor_name'] ?></td>
+                    <td class="p-4"><?= $b['date_publication'] ?></td>
                     <td class="p-4 text-center">
                         <form method="POST">
-                            <input type="hidden" name="book_id" value="<?= $b['id'] ?>">
+                            <input type="hidden" name="book_id" value="<?= $b['ID'] ?>">
                             <button type="submit" name="return" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">Return</button>
                         </form>
                     </td>

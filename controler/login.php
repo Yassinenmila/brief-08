@@ -1,4 +1,3 @@
-
 <?php 
 
 if(isset($_POST['sub_log']) && $_SERVER['REQUEST_METHOD']==='POST'){
@@ -15,7 +14,7 @@ if(isset($_POST['sub_log']) && $_SERVER['REQUEST_METHOD']==='POST'){
         if($user){
 
             $_SESSION['user'] = [
-                'id'    => $user['id'],
+                'id'    => $user['ID'],
                 'nom'   => $user['nom'],
                 'prenom'=> $user['prenom'],
                 'nationalite'=> $user['nationalite'],
@@ -23,7 +22,7 @@ if(isset($_POST['sub_log']) && $_SERVER['REQUEST_METHOD']==='POST'){
                 'role'  => $user['role']
             ];
 
-            header("Location:/home");
+            header("Location: /home");
             exit;
 
         }else{
@@ -31,6 +30,4 @@ if(isset($_POST['sub_log']) && $_SERVER['REQUEST_METHOD']==='POST'){
         }
     }
 }
-
 ?>
-<?php require_once __DIR__."/../views/login.views.php"; ?>
