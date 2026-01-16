@@ -1,0 +1,47 @@
+<?php
+// class banque , 2 propriete , nom, sold
+// 3 methode , getsold,deposer , retirer 
+// class user , nom , banque , getinfo(name,user/sold)
+// create user 
+// banque CIH
+// afficher le sold
+
+class Banque {
+    public $sold;
+    public $nom;
+    
+    public function __construct($nom,$sold){
+        
+        $this->nom = "CIH";
+        $this->sold= 200;
+    }
+    
+    public function static getsold(){
+        echo "votre banque :".$this->nom ."<br> votre sold :".$this->sold;
+    }
+    public function deposer($nombre){
+        $this->sold+=$nombre;
+    }
+    public function retirer ($nombre){
+        $this->sold-=$nombre;
+    }
+}
+
+class User {
+    
+    public $nom ;
+    public $banque;
+    
+    public function getinfo(){
+       Banque::getsold()
+    }
+}
+$user = new User();
+$user->getinfo();
+
+
+
+
+
+
+?>
